@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import {Text,View,TouchableOpacity} from 'react-native';
 import  {DelLastElement,GetLastElement,GetLastValue,CheckingLength,IsDotExist,IsLastOperationSign,DivideByZero,Square,PlusMinus} from './Methods';
-import {styles} from './Mystyles';
+import {styles} from '../Styles/styles';
 
 export default class Calculator extends Component{
   constructor(props){

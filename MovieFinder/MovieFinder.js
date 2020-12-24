@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { View, ScrollView, StyleSheet,Text, TextInput, TouchableOpacity,Image, ImageBackground, Modal, Button} from 'react-native';
+import {styles} from "../Styles/styles";
+import Icon from 'react-native-vector-icons/FontAwesome'
 class MovieFinder extends Component {
   constructor(props) {
     super(props)
@@ -88,56 +90,5 @@ export const ModalText = (show)=>{
     if(show.show.summary!==null){return <><Text style={styles.textModal}>{show.show.summary.replace(/(<([^>]+)>)/gi, "")}</Text></>}
     else{return <><Text style={styles.textModal}>unavialable info</Text></>}
 }
-export const styles=StyleSheet.create({
-  container: {
-    flex : 1,
-    backgroundColor:'#fff',
-    alignItems:'center',
-    justifyContent : 'center',
-  },
-  button:{
-    flex:0.02,
-    borderWidth:2,
-    borderColor:'#234',
-    alignItems:'center',
-    justifyContent : 'center',
-    padding:14,
-    width:200,
-    backgroundColor:'#D7DF01'
-  },
-  input:{
-    borderWidth:2,
-    backgroundColor:'#fff',
-    borderColor:'#823',
-    height:40,
-    width:200,
-    fontSize:20,
-  },
-  image :{
-  flex:1,
-  alignItems:'center',
-  justifyContent:'center'
-  },
-  text:{
-    fontSize:26,
-    color:'white',
-    paddingBottom:15
-  },
-  textModal:{
-    fontSize:26,
-    color:'black',
-  },
-  logotext:{
-    fontSize:26,
-    color:'#DBA901',
-    paddingStart:140,
-    paddingBottom:60,
-    alignSelf:'flex-end',
-  },
-  imageInput:{
-    height:500,
-    width:'100%',
-    alignSelf:'stretch'
-  }
-})
+
 export default MovieFinder

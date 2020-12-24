@@ -1,10 +1,12 @@
 import React from 'react';
-import {View,Button} from 'react-native';
+import {View,Button, ImageBackground,Image, Text} from 'react-native';
 import MovieFinder from '../MovieFinder/MovieFinder';
 import Calculator from '../Calculator/Calculator';
 import { WebView } from 'react-native-webview';
 import { DrawerActions } from '@react-navigation/native';
-
+import {styles} from '../Styles/styles';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import {LogoTitle} from "../Styles/logotitle";
 export function MovieFinderFunc({}) {
     return(
         <>
@@ -14,9 +16,9 @@ export function MovieFinderFunc({}) {
 }
 export function EntertaimentList({navigation}) {
     return(
-        <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'flex-start' }}>
-        <Button title="MovieFinder" onPress={()=>(navigation.navigate('MovieFinder'))}/>
-        </View>
+            <ImageBackground source={require('../image/entertaiment.png')} style={styles.imageEntertaiment}>
+              <TouchableOpacity onPress={()=>(navigation.navigate('MovieFinder'))}><Text style={styles.textMovieFinder}>MovieFinder</Text></TouchableOpacity>
+            </ImageBackground>
       );
 }
 export function CalculatorFunc({}) {
@@ -28,15 +30,19 @@ export function CalculatorFunc({}) {
 }
 export function ToolsList({navigation}) {
     return(
-        <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'flex-start' }}>
-        <Button title="Calculator" onPress={()=>(navigation.navigate('Calculator'))}/>
-        </View>
+          
+            <ImageBackground source={require('../image/tools.png')} style={styles.imageEntertaiment}>
+              <TouchableOpacity onPress={()=>(navigation.navigate('Calculator'))}><Text style={styles.textMovieFinder}>Calculator</Text></TouchableOpacity>
+            </ImageBackground>
+          
       );
 }
 export function CloseScreen({ navigation }){
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Button title="Press button or Swipe Right" onPress={() => navigation.dispatch(DrawerActions.openDrawer())}/>
+      <View style={styles.viewClose}>
+        <ImageBackground style={styles.imageClose} resizeMode='contain' source={require("../image/main.jpg")}>
+          <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}><Text style={styles.textClose}>Press button or Swipe Right</Text></TouchableOpacity>
+        </ImageBackground>
       </View>
     );
 }
@@ -44,7 +50,7 @@ export function CloseScreen({ navigation }){
 export function NewsScreen({navigation}){
       return(
         <>
-          <Button title="Menu"  onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
+         <LogoTitle navigation={navigation}/>
           <WebView
             source={{
               uri: 'https://oxu.az'
@@ -55,8 +61,14 @@ export function NewsScreen({navigation}){
       );
 }
 export function ProfileScreen({navigation}) {
-    return(<><Button title="Open menu" onPress={()=>(navigation.dispatch(DrawerActions.openDrawer()))}/></>) 
+    return(<>
+    <LogoTitle navigation={navigation}/>
+    <Image style={styles.imageEntertaiment} source={require('../image/profile.png')}/>
+    </>) 
  }
 export function SettingsScreen({navigation}) {
-    return(<><Button title = "Open menu" onPress={()=>(navigation.dispatch(DrawerActions.openDrawer()))}/></>) 
+  return(<>
+    <LogoTitle navigation={navigation}/>
+    <Image style={styles.imageEntertaiment} source={require('../image/settings.png')}/>
+    </>) 
 }
