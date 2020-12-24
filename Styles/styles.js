@@ -23,14 +23,14 @@ export const styles=StyleSheet.create({
       borderColor:'#823',
       height:40,
       width:200,
-      fontSize:20,
+      fontSize:16,
     },
     image :{
         flex:1,
         alignItems:'center',
         justifyContent:'center'
     },
-    imageEntertaiment :{
+    imageForScreens :{
         flex:1,
         alignItems:'flex-start',
         justifyContent:'flex-start',

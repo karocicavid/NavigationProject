@@ -1,11 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {ProfileScreen,SettingsScreen} from '../Screens/Screens';
-import {LogoTitle} from "../Styles/logotitle";
+import {ProfileScreen,SettingsScreen} from '../Screens';
+import {LogoTitle} from "../Logo";
 
 
 const Tab = createBottomTabNavigator();
-export function AboutMeScreen({}){
+export function AboutMeTab({}){
     return (
         <Tab.Navigator tabBarOptions={{labelStyle: {fontSize: 25}}}>
           <Tab.Screen name="Profile"  component={ProfileScreen}  options={{headerLeft:()=>(<LogoTitle navigation={navigation}/>)}}/>
